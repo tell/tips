@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo The frequency of all CPUs to be variable.
+echo The frequencies of all CPUs to be variable.
 echo Is it OK?
 read INPUT
 

@@ -3,7 +3,7 @@
 ! { expr "$1" : '[0-9]*' > /dev/null; } && echo ERROR: Not a number. && exit 1
 
 freq=$1
-echo The frequency of all CPUs are fixed to: $freq KHz.
+echo The frequencies of all CPUs are fixed as: $freq KHz.
 echo Is it OK?
 read INPUT
 
