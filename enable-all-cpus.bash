@@ -9,6 +9,9 @@ read INPUT
 
 set -x
 for x in `ls -1 $cpudir/cpu*/online`; do
-  [ ! -e $x ] && echo ERROR: Not exists: $x.
-  echo 1 > $x
+	if [ ! -e $x ]; then
+		echo ERROR: Not exists: $x.
+	else
+		echo 1 > $x
+	fi
 done
