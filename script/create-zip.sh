@@ -10,11 +10,12 @@ case $flag in
 	exit 0;;
 	t) targetdir="$OPTARG";;
 	o) archivename="$OPTARG";;
+    x) excludes="$OPTARG";;
 esac
 done
 
 zipcmd="zip -qr"
-zipflags="-x *~ -x *.gitignore -x *.DS_Store -x .omakedb* -x *.omc -x *.log"
+zipflags="-x *~ -x *.gitignore -x *.DS_Store -x *.blg -x .omakedb* -x *.omc -x *.log -x *.swp -x *.pyc"
 
 if [ -n "${targetdir}" -a -n "${archivename}" ]; then
 	cd ./${targetdir} || exit 1
