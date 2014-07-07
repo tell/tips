@@ -1,17 +1,15 @@
 " Vim syntax file
-" Language: Magma"	
-" Maintainer:	Peter Schwabe <schwabe@ti.rwth-aachen.d3>"
-" URL: http://www.ti.rwth-aachen.de/~schwabe/data/magma.vim
-" Last Change:	2006-11-30
+" Language: Magma
+" Maintainer:	Tadanori TERUYA <tadanori.teruya@gmail.com> (https://github.com/tell)
+" Maintainer:	Peter Schwabe <schwabe@ti.rwth-aachen.d3>
+" URL: http://www.ti.rwth-aachen.de/~schwabe/data/magma.vim (original)
 
 " This syntax file is based on the ada.vim syntax file
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
 if version < 600
- syntax clear
+	syntax clear
 elseif exists("b:current_syntax")
- finish
+	finish
 endif
 
 " We don't need to look backwards to highlight correctly;
@@ -57,7 +55,9 @@ syn keyword magmaBuiltinFunction Argument ArithmeticGenus ArithmeticGeometricMea
 syn keyword magmaBuiltinFunction ArtinSchreierImage ArtinSchreierMap ASigmaL ASL AssertAttribute AssertEmbedding 
 syn keyword magmaBuiltinFunction AssignCapacities AssignCapacity AssignEdgeLabels AssignLabel AssignLabels AssignLDPCMatrix 
 syn keyword magmaBuiltinFunction AssignNamePrefix AssignNames AssignVertexLabels AssignWeight AssignWeights AssociatedEllipticCurve 
-syn keyword magmaBuiltinFunction AssociatedHyperellipticCurve AssociatedNewSpace AssociativeAlgebra AtkinLehner AtkinLehnerInvolution AtkinLehnerOperator 
+syn keyword magmaBuiltinFunction AssociatedHyperellipticCurve AssociatedNewSpace AssociativeAlgebra
+syn keyword magmaBuiltinFunction AssociativeArray 
+syn keyword magmaBuiltinFunction AtkinLehner AtkinLehnerInvolution AtkinLehnerOperator 
 syn keyword magmaBuiltinFunction AtkinModularPolynomial ATLASGroup ATLASGroupNames Attach AttachSpec Augmentation 
 syn keyword magmaBuiltinFunction AugmentationIdeal AugmentationMap AugmentCode Aut AutoCorrelation AutomaticGroup 
 syn keyword magmaBuiltinFunction Automorphism AutomorphismGroup AutomorphismGroupStabilizer AutomorphismOmega Automorphisms AutomorphismSubgroup 
@@ -126,6 +126,7 @@ syn keyword magmaBuiltinFunction CondensedAlgebra ConditionalClassGroup Conditio
 syn keyword magmaBuiltinFunction ConformalSpecialLieAlgebra CongruenceGroup CongruenceModulus CongruenceSubgroup Conic ConjecturalRegulator 
 syn keyword magmaBuiltinFunction ConjugacyClasses Conjugate ConjugatePartition Conjugates Connect ConnectedKernel 
 syn keyword magmaBuiltinFunction ConnectingHomomorphism ConnectionNumber ConnectionPolynomial Consistency ConstaCyclicCode ConstantField 
+syn keyword magmaBuiltinFunction ConstantCoefficient
 syn keyword magmaBuiltinFunction ConstantFieldExtension ConstantMap ConstantRing ConstantWords Constituent Constituents 
 syn keyword magmaBuiltinFunction ConstituentsWithMultiplicities Constraint Construction ConstructionX ConstructionXChain ConstructionXX 
 syn keyword magmaBuiltinFunction ConstructTable ContactLieAlgebra ContainsQuadrangle Content ContentAndPrimitivePart Contents 
@@ -295,7 +296,8 @@ syn keyword magmaBuiltinFunction IdDataSLAC Ideal Idealiser Idealizer IdealQuoti
 syn keyword magmaBuiltinFunction IdealWithFixedBasis Idempotent IdempotentActionGenerators IdempotentGenerators IdempotentPositions Idempotents 
 syn keyword magmaBuiltinFunction IdentificationNumber IdentifyAlmostSimpleGroup IdentifyGroup IdentifyOneCocycle IdentifyTwoCocycle IdentifyZeroCocycle 
 syn keyword magmaBuiltinFunction Identity IdentityAutomorphism IdentityFieldMorphism IdentityHomomorphism IdentityIsogeny IdentityMap 
-syn keyword magmaBuiltinFunction IgusaClebschInvariants IgusaClebschToIgusa IgusaInvariants IharaBound Ilog Im 
+syn keyword magmaBuiltinFunction IgusaClebschInvariants IgusaClebschToIgusa IgusaInvariants IharaBound
+syn keyword magmaBuiltinFunction Ilog Ilog2 Im 
 syn keyword magmaBuiltinFunction Image ImageSystem ImageWithBasis Imaginary ImplicitFunction Implicitization 
 syn keyword magmaBuiltinFunction ImprimitiveAction ImprimitiveReflectionGroup ImproveAutomorphismGroup IncidenceDigraph IncidenceGeometry IncidenceGraph 
 syn keyword magmaBuiltinFunction IncidenceMatrix IncidenceStructure IncidentEdges Include IncludeAutomorphism IncludeWeight 
@@ -319,9 +321,12 @@ syn keyword magmaBuiltinFunction Intseq InvariantFactors InvariantForms Invarian
 syn keyword magmaBuiltinFunction Inverse InverseDefiningPolynomials InverseJeuDeTaquin InverseKrawchouk InverseMattsonSolomonTransform InverseMod 
 syn keyword magmaBuiltinFunction InverseRoot InverseRowInsert InverseRSKCorrespondenceDoubleWord InverseRSKCorrespondenceMatrix InverseRSKCorrespondenceSingleWord InverseSqrt 
 syn keyword magmaBuiltinFunction InverseSquareRoot InverseWordMap Involution Iroot IrreducibleCartanMatrix IrreducibleCoxeterGraph 
-syn keyword magmaBuiltinFunction IrreducibleCoxeterGroup IrreducibleCoxeterMatrix IrreducibleDynkinDigraph IrreducibleMatrixGroup IrreducibleModule IrreducibleModules 
+syn keyword magmaBuiltinFunction IrreducibleCoxeterGroup IrreducibleCoxeterMatrix IrreducibleDynkinDigraph
+syn keyword magmaBuiltinFunction IrreducibleLowTermGF2Polynomial
+syn keyword magmaBuiltinFunction IrreducibleMatrixGroup IrreducibleModule IrreducibleModules 
 syn keyword magmaBuiltinFunction IrreducibleModulesBurnside IrreducibleModulesInit IrreducibleModulesSchur IrreduciblePolynomial IrreducibleReflectionGroup IrreducibleRepresentationsInit 
 syn keyword magmaBuiltinFunction IrreducibleRepresentationsSchur IrreducibleRootDatum IrreducibleRootSystem IrreducibleSecondaryInvariants IrreducibleSolubleSubgroups IrreducibleSubgroups 
+syn keyword magmaBuiltinFunction IrreducibleSparseGF2Polynomial 
 syn keyword magmaBuiltinFunction IrregularLDPCEnsemble ISA ISABaseField IsAbelian IsAbelianVariety IsAbsoluteField 
 syn keyword magmaBuiltinFunction IsAbsolutelyIrreducible IsAbsoluteOrder IsAdditiveOrder IsAdjoint IsAffine IsAffineLinear 
 syn keyword magmaBuiltinFunction IsAlgebraic IsAlgebraicallyDependent IsAlgebraicallyIsomorphic IsAlgebraicDifferentialField IsAlgebraicGeometric IsAlternating 
@@ -411,7 +416,8 @@ syn keyword magmaBuiltinFunction IsUnivariate IsUnramified IsUpperSymmetric IsVa
 syn keyword magmaBuiltinFunction IsVertexLabelled IsVertexTransitive IsWeaklyAG IsWeaklyAGDual IsWeaklyConnected IsWeaklyEqual 
 syn keyword magmaBuiltinFunction IsWeaklyMonic IsWeaklyZero IsWeierstrassModel IsWeierstrassPlace IsWeighted IsWildlyRamified 
 syn keyword magmaBuiltinFunction IsWreathProduct IsZero IsZeroAt IsZeroComplex IsZeroDimensional IsZeroDivisor 
-syn keyword magmaBuiltinFunction IsZeroMap IsZeroTerm Jacobi Jacobian JacobianIdeal JacobianMatrix 
+syn keyword magmaBuiltinFunction IsZeroMap IsZeroTerm
+syntax keyword magmaBuiltinFunction Jacobi Jacobian JacobianIdeal JacobianMatrix 
 syn keyword magmaBuiltinFunction JacobianOrdersByDeformation JacobianPoint JacobiSymbol JacobiTheta JacobiThetaNullK JacobsonRadical 
 syn keyword magmaBuiltinFunction JBessel JenningsLieAlgebra JenningsSeries JeuDeTaquin jFunction JH 
 syn keyword magmaBuiltinFunction jInvariant JInvariants JohnsonBound JOne JordanForm Js 
@@ -445,7 +451,7 @@ syn keyword magmaBuiltinFunction Lines LineSet Linking LinkingNumbers ListAttrib
 syn keyword magmaBuiltinFunction ListSignatures ListTypes ListVerbose LLL LLLBasisMatrix LLLGram 
 syn keyword magmaBuiltinFunction LLLGramMatrix LocalCoxeterGroup LocalFactorization LocalGenera LocalHeight LocalInformation 
 syn keyword magmaBuiltinFunction Localization LocalRing LocalTwoSelmerMap LocalUniformizer Log LogarithmicFieldExtension 
-syn keyword magmaBuiltinFunction LogDerivative LogGamma LogIntegral Logs LongestElement LongExactSequenceOnHomology 
+syn keyword magmaBuiltinFunction LogDerivative LogGamma Logger LogIntegral Logs LongestElement LongExactSequenceOnHomology 
 syn keyword magmaBuiltinFunction LowerCentralSeries LowerFaces LowerSlopes LowerTriangularMatrix LowerVertices LowIndexNormalSubgroups 
 syn keyword magmaBuiltinFunction LowIndexProcess LowIndexSubgroups LPolynomial LPProcess LRatio LRatioOddPart 
 syn keyword magmaBuiltinFunction LSeries LSeriesData LSeriesLeadingCoefficient LSetCoefficients LSetPrecision LStar 
@@ -474,6 +480,7 @@ syn keyword magmaBuiltinFunction MinimumLeeWeight MinimumOutDegree MinimumWeight
 syn keyword magmaBuiltinFunction MinimumWords Minindeg MinkowskiBound MinkowskiLattice MinkowskiSpace MinorBoundary 
 syn keyword magmaBuiltinFunction MinorLength Minors Minoutdeg MinParabolics MinusInfinity MinusTamagawaNumber 
 syn keyword magmaBuiltinFunction MinusVolume MixedCanonicalForm ModelToString ModelType Modexp ModifySelfintersection 
+syn keyword magmaBuiltinFunction ModByPowerOf2
 syn keyword magmaBuiltinFunction ModifyTransverseIntersection Modinv Modorder Modsqrt ModularAbelianVariety ModularCurve 
 syn keyword magmaBuiltinFunction ModularCurveDatabase ModularDegree ModularEmbedding ModularEquation ModularForm ModularForms 
 syn keyword magmaBuiltinFunction ModularKernel ModularParameterization ModularParametrisation ModularParametrization ModularPolarization ModularSolution 
@@ -786,9 +793,15 @@ syn keyword magmaBuiltinFunction ZeroSubgroup ZeroSubspace ZeroSubvariety ZeroSu
 syn keyword magmaBuiltinFunction ZinovievCode 
 
 " Define Operators.
-syn keyword magmaOperator	 mod not eq gt lt
-syn match magmaOperator		"[-+*/&]"
+syn keyword magmaOperator	assigned
+syn keyword magmaOperator	ext elt
+syn keyword magmaOperator	mod div
+syn keyword magmaOperator	not eq ne ge le gt lt and or
+syn match magmaOperator		"[-+*/&|#]"
 syn match magmaOperator		"\.\."
+syn match magmaOperator		"\^"
+syn match magmaOperator		"\!"
+syn match magmaOperator		"\~"
 
 " We won't map "magmaAssignment" by default, but we need to map ":=" to
 " something or the "=" inside it will be mislabelled as an operator.
@@ -819,22 +832,34 @@ syn region magmaComment oneline contains=magmaTodo start="//" end="$"
 syn region magmaComment contains=magmaTodo start="/\*" end="\*/" 
 
 " Repeats.
-syn keyword magmaRepeat		repeat for while until
+syn keyword magmaRepeat		repeat for to do by while until
 syn match magmaRepeat		"\<end\s\+for\>"
+syn match magmaRepeat		"\<end\s\+while\>"
+
+" Try.
+syn keyword magmaTry	try catch
+syn match magmaTry	"\<end\s\+try\>"
 
 " Keywords.
+syn keyword magmaKeyword	assert assert2 assert3
 syn keyword magmaKeyword	return
+syn keyword magmaKeyword	print printf vprint vprintf
+syn keyword magmaKeyword	in
+syn keyword magmaKeyword	time vtime
 
 " Conditionals. 
 syn match magmaConditional	"\<then\>"
 syn match magmaConditional	"\<else\>"
+syn match magmaConditional	"\<elif\>"
 syn match magmaConditional	"\<end\s\+if\>"
 syn match magmaConditional	"\<end\s\+case\>"
 syn keyword magmaConditional	if case
 
 " These keywords begin various constructs, and you _might_ want to
 " highlight them differently.
-syn keyword magmaBegin		begin function procedure
+syn keyword magmaBegin		function procedure
+syn match magmaBegin		"\<end\s\+function\>"
+syn match magmaBegin		"\<end\s\+procedure\>"
 
 " String and character constants.
 syn region  magmaString 	start=+L\="+ skip=+\\\\\|\\"+ end=+"+
@@ -855,34 +880,34 @@ if version >= 508 || !exists("did_ada_syn_inits")
    endif
 
 
- " The default methods for highlighting. Can be overridden later.
-  HiLink magmaBoolean	Boolean
-	HiLink magmaBuiltinFunction Special 
-  HiLink magmaCharacter	Character
-	HiLink magmaComment Comment
-  HiLink magmaConditional Conditional
-  HiLink magmaKeyword	Keyword
-  HiLink magmaNumber	Number
-  HiLink magmaSign	Number
-  HiLink magmaOperator	Operator
-  HiLink magmaRepeat	Repeat
-  HiLink magmaSpecial	Special
-  HiLink magmaStatement	Statement
-  HiLink magmaString	String
-  HiLink magmaStructure	Structure
-  HiLink magmaTodo	Todo
-  HiLink magmaType	Type
-  HiLink magmaTypedef	Typedef
-	HiLink magmaError Error
-  HiLink magmaStorageClass	StorageClass
-  HiLink magmaInc	Include
+" The default methods for highlighting. Can be overridden later.
+HiLink magmaBoolean			Boolean
+HiLink magmaBuiltinFunction	Special
+HiLink magmaCharacter		Character
+HiLink magmaComment			Comment
+HiLink magmaConditional		Conditional
+HiLink magmaKeyword			Keyword
+HiLink magmaNumber			Number
+HiLink magmaSign			Number
+HiLink magmaOperator		Operator
+HiLink magmaRepeat			Repeat
+HiLink magmaSpecial			Special
+HiLink magmaStatement		Statement
+HiLink magmaString			String
+HiLink magmaStructure		Structure
+HiLink magmaTodo			Todo
+HiLink magmaType			Type
+HiLink magmaTypedef			Typedef
+HiLink magmaError			Error
+HiLink magmaStorageClass	StorageClass
+HiLink magmaInc				Include
+HiLink magmaBegin			Keyword
+HiLink magmaEnd				Keyword
+HiLink magmaTry				Keyword
 
-  HiLink magmaBegin	Keyword
-  HiLink magmaEnd	Keyword
-  
 	delcommand HiLink
 endif
 
 let b:current_syntax = "magma"
 
-" vim: ts=8
+" vim: ts=4 noexpandtab
