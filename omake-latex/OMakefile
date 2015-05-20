@@ -1,0 +1,15 @@
+LATEX = platex -synctex=1 -interaction=nonstopmode -file-line-error
+BIBTEX = pbibtex
+DVIPDFM = dvipdfmx -V 5
+
+# TODO: consider using latex-mk
+
+%.dvi: %.tex
+	$(RM) $(addsuffix $(removesuffix $@), .aux .toc .loa .lof .bbl .out)
+	$(LATEX) $(removesuffix $@)
+	$(BIBTEX) $(removesuffix $@) || true
+	$(LATEX) $(removesuffix $@)
+
+%.pdf: %.dvi
+	$(LATEX) $(removesuffix $@)
+	$(DVIPDFM) $(removesuffix $@)
