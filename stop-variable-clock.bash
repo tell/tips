@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-show_clocks() {
+function show_clocks() {
 	echo Available freqs.:
 	cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 	echo Available governors:
@@ -17,7 +17,6 @@ read INPUT
 
 cpudir='/sys/devices/system/cpu/cpu*/cpufreq'
 
-set -x
 for x in $cpudir; do
   echo For $x:
   echo userspace > $x/scaling_governor
