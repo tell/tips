@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Sage wrapper
+
+if [ -n "$PYTHONPATH" ]; then
+  echo WARNING: unset PYTHONPATH 1>&2
+  unset PYTHONPATH
+fi
+
+SAGE_ROOT='...'
+
+if [ ! -d $SAGE_ROOT ]; then
+  echo ERROR: $SAGE_ROOT: not found 1>&2
+  exit 1
+fi
+
+$SAGE_ROOT/sage "$@"
