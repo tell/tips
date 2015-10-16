@@ -8,7 +8,7 @@ function show_clocks() {
 	return 0
 }
 
-! { expr "$1" : '[0-9]*' > /dev/null; } && echo ERROR: Not a number. && show_clocks && exit 1
+! { expr "$1" : '[0-9]*' > /dev/null; } && echo ERROR: "$1": Not a number. && show_clocks && exit 1
 
 freq=$1
 echo The frequencies of all CPUs are fixed as: $freq KHz.
