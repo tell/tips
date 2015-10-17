@@ -8,7 +8,11 @@ for x in $cpus; do
 	sc_gov="$x/cpufreq/scaling_governor"
 	th_sib="$x/topology/thread_siblings_list"
 	echo at $(basename $x):
-	echo "  Freq.: $(cat $cur_freq)"
+	if [ -r $cur_freq ]; then
+		echo "  Freq.: $(cat $cur_freq)"
+	else
+		echo "$cur_freq: Permission denied"
+	fi
 	echo "  Gov.: $(cat $sc_gov)"
 	echo "  Sibs.: $(cat $th_sib)"
 done
