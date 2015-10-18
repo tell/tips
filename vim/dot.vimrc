@@ -31,6 +31,7 @@ set showmatch
 set autoindent
 
 " Settings for expandtab.
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -73,4 +74,27 @@ endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 set showtabline=2 " 常にタブラインを表示
 
+" }}}
+
+" Settings for cscope. {{{
+if has("cscope")
+    set nocsverb
+    "" add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    "" else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+    set cscopetag
+endif
+" }}}
+
+" Settings for GNU GLOBAL. {{{
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
 " }}}
