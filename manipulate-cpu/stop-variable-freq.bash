@@ -12,8 +12,10 @@ function show_clocks() {
 
 freq=$1
 echo The frequencies of all CPUs are fixed as: $freq KHz.
-echo Is it OK?
+echo "Is it OK? [Y/N]"
 read INPUT
+
+! [ "$INPUT" == "Y" ] && exit 1
 
 cpudir='/sys/devices/system/cpu/cpu*/cpufreq'
 
