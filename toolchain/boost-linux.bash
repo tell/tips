@@ -16,11 +16,11 @@ function compile() {
 
     ./b2 headers
     temp="$version/$toolset/debug"
-    ./b2 -j 3 --stagedir="stage/$temp" toolset=$toolset threading=multi variant=debug address-model=64 link=static,shared
-    ./b2 -j 3 install --stagedir="stage/$temp" --prefix="$prefix/$temp"
+    ./b2 -j 3 install --stagedir="stage/$temp" --prefix="$prefix/$temp" \
+        toolset=$toolset threading=multi variant=debug address-model=64 link=static,shared
     temp="$version/$toolset/release"
-    ./b2 -j 3 --stagedir="stage/$temp" toolset=$toolset threading=multi variant=release address-model=64 link=static,shared
-    ./b2 -j 3 install --stagedir="stage/$temp" --prefix="$prefix/$temp"
+    ./b2 -j 3 install --stagedir="stage/$temp" --prefix="$prefix/$temp" \
+        toolset=$toolset threading=multi variant=release address-model=64 link=static,shared
 }
 
 compile gcc 1.59.0 "/opt/local/boost"
